@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import './index.css';
-import App from './components/App';
+import EventsIndex from './components/events_index';
 import * as serviceWorker from './serviceWorker';
 import reducer from "./reducers";
 
@@ -11,7 +11,7 @@ const store = createStore(reducer)
 
 ReactDOM.render(
   <Provider store ={store}>
-    <App />
+    <EventsIndex />
   </Provider>,
   document.getElementById('root')
 );
