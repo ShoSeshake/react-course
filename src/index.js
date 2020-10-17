@@ -11,6 +11,7 @@ import * as serviceWorker from "./serviceWorker";
 import reducer from "./reducers";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { composeWithDevTools } from 'redux-devtools-extension';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const enhancer =
   process.env.NODE_ENV === "development"
@@ -20,6 +21,7 @@ const enhancer =
 const store = createStore(reducer, enhancer);
 
 ReactDOM.render(
+  <MuiThemeProvider>
   <Provider store={store}>
     <BrowserRouter>
       <Switch>
@@ -29,7 +31,8 @@ ReactDOM.render(
         <Route path="/events" component={EventsIndex} />
       </Switch>
     </BrowserRouter>
-  </Provider>,
+  </Provider>
+  </MuiThemeProvider>,
   document.getElementById("root")
 );
 

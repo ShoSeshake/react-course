@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { Field, reduxForm } from "redux-form";
 import "./App.css";
 import {postEvent }from '../actions';
+import RaisedButton from 'material-ui/RaisedButton'
+import TextField from 'material-ui/TextField'
 
 class EventsNew extends Component {
   constructor(props){
